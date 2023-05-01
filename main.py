@@ -1,3 +1,4 @@
+import pandas
 import pandas as pd
 #
 df = pd.read_csv('./weather_data.csv')
@@ -23,10 +24,21 @@ df = pd.read_csv('./weather_data.csv')
 
 # Celsius to Fahrenheit
 
-celsius = df['temp']
+# celsius = df['temp']
+#
+# for i in celsius:
+#     fahrenhit = (i * 9/5) + 32
+#
+#     print(fahrenhit)
 
-for i in celsius:
-    fahrenhit = (i * 9/5) + 32
 
-    print(fahrenhit)
 
+data_dict = {
+    "students": ["Bilol", "Elyor", "Shahzod"],
+    "scores": [20, 22, 25]
+}
+
+data = pandas.DataFrame(data_dict)
+print(data)
+
+data.to_csv('new_data.csv')
