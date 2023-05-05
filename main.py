@@ -1,7 +1,7 @@
-import pandas
 import pandas as pd
-#
-df = pd.read_csv('./weather_data.csv')
+
+
+# df = pd.read_csv('./weather_data.csv')
 #
 # print(df['temp'])
 #
@@ -33,12 +33,42 @@ df = pd.read_csv('./weather_data.csv')
 
 
 
-data_dict = {
-    "students": ["Bilol", "Elyor", "Shahzod"],
-    "scores": [20, 22, 25]
+# data_dict = {
+#     "students": ["Bilol", "Elyor", "Shahzod"],
+#     "scores": [20, 22, 25]
+# }
+#
+# data = pandas.DataFrame(data_dict)
+# print(data)
+#
+# data.to_csv('new_data.csv')
+
+
+central_park = pd.read_csv('2018_Central_Park_Squirrel_Census_-_Squirrel_Data.csv')
+gray = 0
+cinnamon = 0
+black = 0
+nan = 0
+for i in central_park['Primary Fur Color']:
+    if i == "Gray":
+        gray += 1
+    elif i == "Cinnamon":
+        cinnamon += 1
+    elif i == "Black":
+        black += 1
+    elif i == "nan":
+        nan += 1
+
+
+all = {
+    "Colors": ["Gray", "Cinnamon", "Black"],
+    "Counts": [gray, cinnamon, black]
 }
 
-data = pandas.DataFrame(data_dict)
-print(data)
-
-data.to_csv('new_data.csv')
+df = pd.DataFrame(all)
+df.to_csv("count_result.csv")
+# print(f"""
+#     Grays are: {gray},
+#     Cinnamons are: {cinnamon},
+#     Blacks are: {black}
+# """)
